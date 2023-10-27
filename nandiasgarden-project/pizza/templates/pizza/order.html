@@ -1,7 +1,11 @@
 <h1>Order a pizza</h1>
 
 <h2>{{ note }}</h2>
+{% if created_pizza_pk %}
+    <a href="{%url 'edit_order' created_pizza_pk %}">Edit your order</a>
+{% endif %}
 
+{% comment %} for submitting images: enctuype="multipart/form-data"  {% endcomment %}
 <form action="{% url "order" %}" method="post">
     {% csrf_token %}
     {{ pizzaform }} {% comment %} This replaces the next chunk of code {% endcomment %}
@@ -19,4 +23,13 @@
         <option value="Large">Large</option>
     </select> {% endcomment %}
     <input type="submit" class="button btn-primary" value="Order Pizza"></input>
+</form>
+
+<br><br>
+
+Want another pizza?
+
+<form action="{% url "pizzas" %}" method="get">
+    {{multiple_form}}
+    <input type="submit" value="Get Pizzas">
 </form>
