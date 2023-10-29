@@ -8,3 +8,12 @@ The aim of the project is to practice Django forms and build portfolio.
 ```python manage.py runserver```
 # Forms:
  * By default, a form, if we don't specify the action will direct to the same url it was declared.
+
+# Packages required:
+- Django
+- Pillow
+- django-widget-tweaks
+
+# To run:
+ - Django-Restaurant\nandiasgarden-project> python manage.py runserver
+ - python manage.py collectstatic
